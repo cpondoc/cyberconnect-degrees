@@ -10,7 +10,6 @@ import json
 
 # Global variables
 source_addr = "0x8ddD03b89116ba89E28Ef703fe037fF77451e38E"
-#target_addr = "0x0c78df329571a4f08d4e9a9d627f6e099721978d"
 target_addr = "0xb7706727afb71d0a1f617f62c29df36b86649999"
 
 # Set up call to query
@@ -84,6 +83,8 @@ def graph_bfs(client, source, target):
                     return new_list
 
 # Run code and check
-client = set_up_query()
-final_list = graph_bfs(client, source_addr, target_addr)
-print(final_list)
+if __name__ == "__main__":
+    client = set_up_query()
+    final_list = graph_bfs(client, source_addr, target_addr)
+    print("The shortest path is of length: " + str(len(final_list)))
+    print(final_list)
